@@ -1,0 +1,54 @@
+﻿/문제 풀이/
+1번
+#include <stdio.h>
+
+int main()
+{
+	printf("hello, world\n");
+
+	system("pause");
+	return 0;
+}
+
+2번
+
+parkinson's Law:
+Work expands so as to fill the time
+available for its completion.
+
+3번
+
+4번
+
+#include <stdio.h>
+
+int main()
+{
+	int a;
+	float b;
+
+	system("pause");
+	return 0;
+}
+
+5번
+
+답 1번
+
+6번
+
+하나 또는 두 개의 밑줄이 있는지 
+여부를 알기가 어렵 기 때문에
+
+7번
+
+답 4번
+
+/모르는 내용/
+
+3번 문제 번역기를 돌려보아도 무슨 말인지를 모르겠음
+Condense the dweight.c program by 
+(1) replacing the assignments to height, length, and width with initializers and 
+(2) removing the weight variable, instead calculating (volume+165)/166 within the last printf.
+
+6번 https://translate.googleusercontent.com/
