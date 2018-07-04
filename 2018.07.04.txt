@@ -1,0 +1,131 @@
+﻿[K.N.King]
+Chapter 5. Programming Projects
+
+1. Wirte a program that asks the user to enter a two-digit number, then prints number with its
+digits reversed. A session with the program should have the following appearance:
+Enter a two-digit number: 28
+The reversal is: 82
+Read the number using %d, then break it into two digits. Hint: If n is an integer, then n % 10 is the last
+digit in n and n / 10 is n with the last digit removed.
+int main()
+{
+	int n;
+	int a, b;
+
+	printf("Enter a two-digit number: ");
+	scanf_s("%d", &n);
+	a = n % 10;
+	b = n / 10;
+	n = 10 * a + b;
+	printf("%d", n);
+
+	system("pause");
+	return 0;
+}
+
+2. Extend the program in Programming Project 1 to handle three-digit numbers.
+int main()
+{
+	int n;
+	int a, b,c;
+
+	printf("Enter a three-digit number: ");
+	scanf_s("%d", &n);
+	a = n % 10;
+	b = n / 100;
+	c = n / 10 % 10;
+	n = 100 * a + b+c*10;
+	printf("%d", n);
+
+	system("pause");
+	return 0;
+}
+
+3. Rewrite the program in Programming Project 2 so that it prints the reversal of a three-digit number without
+using arithmetic to split the number into digits. HInt: See the upc.c program of Section 4.1
+int main()
+{
+	int a[3] = { 0 };
+	int i;
+	printf("Enter a three-digit number");
+	for(i = 0; i < 3; i++)
+		scanf_s("%d", &a[i]);
+	for(i = 2; i >= 0; i--)
+		printf("%d", a[i]);
+
+	system("pause");
+	return 0;
+}
+
+4. Write a program that reads an integer entered by the user and displays it in octal (base 8):
+Enter a nubmer between 0 and 32767: 1953
+In octal, your number is: 03641
+
+The ouput should be displayed using five digits, even if fewer digits are sufficient. HInt: To convert the number
+to octal, first divide it by 8; the remainder is the last digit of the octal number (1, in this case). THen divide the
+original number by 8 and repeat the process to arrive at the next-to-last digit. (printf is capable of displaying
+numbers in base 8, as we'll see in Chapter 7, so there's actually an easier way to wirte this program.)
+
+5. Rewrite the upc.c. program of Section 4.1 so that the user enters 11 digits at one time, instead of 
+entering one digit, then five digits, and then another fie digits.
+Enter the first 11 digits of a UPC: 01380015173
+
+6.European countires use a 13-digit code, known as a European Article Number (EAN) instead of the 12-digit
+Universal Produce code (UPC) found in North America. Each EAN ends with a check digit, just as a UPC does.
+The technique for calculating the check digit is also similar;
+
+Add the second, fourth, sixth, eighth, tenth, and twelfth digits.
+Add the first, Third, fifth, seventh, ninth, and eleventh digits.
+Multiply the first sum by 3 and add it to the second sum.
+Subtract 1 from the total.
+Compute the remainder when the adjusted total is divided by 10.
+Subtract the remainder from 9.
+
+For example, consider Gulluoglu Turkish Delight Pistachio & Coconut, which has an EAN of 8691484260008.
+The first sum is 6 + 1 + 8 + 2 + 0 + 0 = 17, and the second sum is 8 + 8 + 4 + 4 + 6 + 0 = 31.
+Multiplying the first sum by 3 and adding the second yields 82. Subtracting 1 gives 81. The reaminder upon
+dividing by 10 is 1. When the remainder is subtracted from 9. the result is 8, which matches the last digit of 
+the original code. Your job is to modify the upc.c program of SEction 4.1 so that it calculates the check digit
+for and EAN. The user will enter the first 12 digits of the EAN as a single number:
+
+Enter the first 12 digits of an EAN: 869148426000
+check digit: 8
+
+
+- 맵은 2차원 배열을 이용해서 구현했습니다. 
+
+- 2차원 배열(=맵) 에서 WALL인 부분, EMPTY인 부분, BlOCK을 구분해서 출력해줍니다.
+
+- gotoxy 함수를 이용하여 앞쪽에서(실제 user에게 보여지는) 출력을 해주고, 그것에 대한 데이터를 뒤에서(2차원 배열) 저장해주는 방식으로 구현했습니다.
+
+<Block>
+
+- 블럭도 3차원 배열을 이용하여서 7개의 블럭을 일일히 만들어 놨습니다.
+
+- 랜덤 함수를 이용하여 7개의 블럭중의 하나가 출력되게 구현하였고, next 블럭 또한 구현하였습니다.
+
+- 모든 블럭들이 4x4 안에있는데 rotation을 할때마다 4x4 배열 안에 있는 BLOCK을 인식하게 하였고, 그 블락의 범위중 왼쪽끝, 아래끝, 오른쪽끝을 계산하여서 경계(왼쪽, 오른쪽, 아래 부딪히는곳)와 만날때 이벤트를 발생하도록 구현했습니다.
+
+- 벽면이나 블락 옆에서 로테이션 할때 블럭이 겹치게 되면 해당 방향 반대편으로 한칸 이동하도록 (겹치지 않도록) 하였습니다.
+
+
+<기능>
+
+0. 방향키(←, →)로 좌우로 이동합니다.
+
+1. 방향키 위(↑) 를 누르면 테트리스 블럭의 모양이 시계방향으로 회전합니다.
+
+2. 스페이스(space)를 누르면 매우 빠르게 블럭이 내려가서 해당하는 곳의 맨 밑으로 위치합니다.
+
+3. 가만히 있어도 일정한 속도로 블럭이 내려갑니다.
+
+4. 처음 시작을 하면 3초 정도 시간이 주어진 다음 게임이 시작됩니다.
+
+5. Best Score 는 기록이 되어서, exe와 같은 폴더 내에 "score.txt" 파일로 저장이 됩니다. 파일 입출력을 이용하여서, exe파일이 시작 될때 "score.txt" 파일의 내용을 불러와서, Best Score를 기록합니다.
+
+6. 게임중 't | T' 를 누르면 현재 스코어를 저장하지 않고 메인화면으로 이동합니다.
+
+7. 게임중 'p | P'를 누르면 일시정지 하게됩니다. 다시 'p | P'를 누르면 개임이 다시 시작 됩니다.
+
+8. 메인화면에서 't | T'를 누르면 프로그램이 종료됩니다.
+
