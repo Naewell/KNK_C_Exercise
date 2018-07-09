@@ -1,0 +1,125 @@
+﻿[K.N.King]
+Chapter 6. Programming Projects
+
+1. Wirte a program that finds the largest in a series of numbers entered by the user. The program must prompt the user
+to enter numbers one by one. When the user enters 0 or a negative number, the program must display the largest nonnegative
+number entered:
+
+#include <stdio.h>
+
+int main()
+{
+	int n, i, max = 0;
+
+	for (i = 0; i < 10000; i++)
+	{
+		printf("Enter a number: ");
+		scanf_s("%d", &n);
+		if (n > max)
+			max = n;
+		if (n == 0)
+			break;
+	}
+	printf("%d", max);
+	system("pause");
+	return 0;
+}
+
+2. Wirte a program that asks the user to enter two integers, then calculates and displays their greatest common divisor
+
+#include <stdio.h>
+
+int main()
+{
+	int a, b, i,div;
+
+	printf("Enter two integers: ");
+	scanf_s("%d %d", &a, &b);
+
+	if (a > b)
+	{
+		for (i = 1; i <= a; i++)
+			if (a%i == 0 && b%i == 0)
+				div = i;
+	}
+
+	if (b > a)
+	{
+		for (i = 1; i <= b; i++)
+			if (a%i == 0 && b%i == 0)
+				div = i;
+	}
+	printf("Greatest comon divisor:%d", div);
+
+	system("pause");
+	return 0;
+}
+
+3. Write a program that asks the user to enter a fraction, then reduces the fraction to lowest terms:
+
+#include <stdio.h>
+
+int main()
+{
+	int a, b, i,div;
+
+	printf("Enter two integers: ");
+	scanf_s("%d %d", &a, &b);
+
+	if (a > b)
+	{
+		for (i = 1; i <= a; i++)
+			if (a%i == 0 && b%i == 0)
+				div = i;
+	}
+
+	if (b > a)
+	{
+		for (i = 1; i <= b; i++)
+			if (a%i == 0 && b%i == 0)
+				div = i;
+	}
+	int A, B;
+	printf("Enter a fraction: ");
+	scanf_s("%d/%d", &a, &b);
+	A = a / div;
+	B = b / div;
+	printf("In lowest terms: %d/%d", A,B);
+
+	system("pause");
+	return 0;
+} 
+
+4. Add a loop to the broker.c program of Section 5.2 so that the user can enter more than one trade and the program will
+calculate the commission on each. The program should terminate when the user enters 0 as the trade value:
+
+5. Programming Project 1 in Chapter 4 askedd you to write a program that displays a two-digit number with its digit
+reversed. Generalize the program so that the number can have one, tow, three, or more digits.
+
+6. Write a program that prompts the user to enter a number n, then prints all even squares between 1 and n. For example,
+if the user inters 100, the program should print the following:
+
+7. Rearrange the squre3.c program so that the for loop initializes i, tests i, and increments i. Don't rewrite the program;
+in particular, don't use any multiplications.
+
+8. Write a program that prints a one-month calendar. The user specifices the number of days in the month and the day of the
+week on which the month begins:
+
+9. Programming Project 8 in Chapter 2 asked you to write a program that calculates the remaining balance on a loan 
+after the first, second, and third monthly payments. Modify the program so that it also asks the user to enter the number
+of payments and then displays the balance remaining after each of these payments.
+
+10. Programming Project 9 in Chapter 5 asked you to write a program that determines which of two dates comes earlier
+on the calendar. Generalize the program so that the user may enter any number of dates. The user will enter 0/0/0 to
+indicate that no more dates will be entered:
+
+11. The value of the mathematical constant  e can be expressed as an infinite series:
+e = 1 + 1/1! + 1/2! + 1/3!+...
+Write a program that approximates e by computing the value of 
+1 + 1/1! + 1/2! + 1/3! + ... + 1/n!
+where n is an integer entered by the user.
+
+12. Modify Programming Project 11 so that the program continues adding terms until the current term becomes less than
+e, where e is a small (floating-point) number entered by the user.
+
+36 10
