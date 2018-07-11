@@ -1,0 +1,87 @@
+﻿[K.N.King]
+Chapter 7. Exercise
+
+1. Give the decimal value of each of the following integer constants.
+(a) 077 8진수
+(b) 0x77 16진수
+(c) 0XABC 문자열..?
+
+2. Which of the following are not legal constants in C? Classify each legal constant
+as either integer or floating-point.
+(a) 010E2
+(b) 32.1E+5
+(c) 0790
+(d) 100_000 <-
+(e) 3. 978e-2
+
+3. Which of the following are not legal types in C?
+(a) short unsigned int
+(b) short float
+(c) long double <-
+(d) unsigned long
+
+4. If c is a variable of type char, which one of the following statements is illegal?
+(a) i += c;
+(b) c = 2 * c - 1;
+(c) putchar(c);
+(d) printf(c); <-
+
+5. Which one of the following is not a legal way to write the number 65?
+(a) 'A'
+(b) 0b1000001
+(c) 0101 <-
+(d) 0x41
+
+6. For each of the following items of data, specify which one of the types char, short, int, or long is the
+smallest one guaranteed to be large enough to store the item.
+(a) Days in a month int
+(b) Days in a year int 
+(c) Minutes in a day long
+(d) Seconds in a day long
+
+7. For each of the following character escapes, give the equivalent octal escape. You may wish to consult
+Appendix E, which lists the numerical codes for ASCII characters.
+(a) \b
+(b) \n
+(C) \r
+(d) \t
+
+8. Repeat Exercise 7, but give the equivalent hexadecimal escape.
+
+9. Suppose that i and j are variables of type int. What is the type of the expression i/j + 'a'?
+-> ?
+
+10. Suppose that i is a variable of type int, j is a variable of type long, and k is a variable of type
+unsigned int. What is the type of the expression i + (int) j * k?
+-> int
+
+11. Suppose that i is a variable of type int, f is a variable of type float, and d is a variable of type double.
+What is the type of the expression i * f / d? 
+-> 실수나옴
+
+12. Suppose that i is a variable of type int, f is a variable of type float, and d is a variable of type
+double. Explain what conversions take place during the execution of the following statement:d=i+f;l
+-> 정수만 계산 소수점 뒤엔 결과값이 안나옴
+
+13. Assume that a program contains the following declarations:
+char c = '\1';
+short s = 2;
+int i = -3;
+long m = 5;
+float f = 6.5f;
+double d = 7.5;
+Give the value and the type of each expression listed below.
+(a) c * i = -3
+(b) s + m  = 7
+(c) f / c = 6
+(d) d / s = 3.25
+(e) f - d = -1
+(f) (int) f = 6
+
+14. Does the following statement always compute the fractional part of f correctly (assuming that
+f and frac+part are float variables)?
+frac+part = f - (int) f;
+If not, what's the problem?
+
+15. Use typedef to create types named Int8, Int16, and Int 32. Define the types so that they
+represent 8-bit, 16-bit, and 32-bit integers on your machine.
