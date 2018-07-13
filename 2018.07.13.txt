@@ -1,0 +1,67 @@
+﻿[K.N.King]
+Chapter 8. Exercise
+
+1. We discussed using the expression sizeof(a) / sizeof(a[0]) to calulate the number of elements in an 
+array. The expression sizeof(a) / sizeof(t), where t is the type of a's elements, would also work, but it's
+considered an inferior technique. Why?
+-> 배열이 얼만큼 배정됬는지 몰라서
+
+2. The Q&A section shows how to use a letter as an array subscript. Describe how to use a digit
+(in character form) as a subscript.
+-> letter_count [ch-'a'] = 0;
+
+3. Wirte a declaration of an array named weekend containing weven bool values. Include an 
+initializer that makes the first and last values true; all other values should be false.
+-> weekend[7] = { Monday, Tuesday, Wednesday, Thursday, Friday , Saturday , Sunday};
+
+4. (C99) Repeat Exercise 3, but this time use a designated initializer. Make the initializer as short as 
+possible.
+
+-> wek[7] = { Mon, Tue, Wed, Thu, Fri , Sat , Sun};
+
+5. The Fibonacci numbers are 0,1,1,2,3,5,8,13, ..., where each number is the sum of the two preceding
+numbers. Wirte a program fragment that declares  an array named fib_numbers of length 40 and fills
+the array with the first 40 Fibonacci numbers.
+
+-> #include <stdio.h>
+
+int main()
+{
+	int i, fib_numbers[40];
+	fib_numbers[0] = 0;
+	fib_numbers[1] = 1;
+	fib_numbers[2] = 2;
+
+	for (i = 3; i <= 38; i++);
+	{
+		fib_numbers[i] = fib_numbers[i-1] + fib_numbers[i - 2];
+	}
+	system("pause");
+	return 0;
+}
+
+
+6. Calculators, watches, and other electronic devices often rely on seven-segment displays for numercial
+ouput. To form a digit, such devices "turn on" some of the seven segments while leaving others "off":
+Suppose that we want to set up array that remembers which segments should be "on" for each digit.
+Let's number the segments as follows:
+Here's what the array might look like, with each row representing one digit: 
+const int segments[10][7] = {{1,1,1,1,1,1,0},...};
+I've given you the first row of the initializer; fill in the rest.
+
+7. Using the shortcuts described in Section 8.2 shrink the initializer for the segments array(Exercise 6) as
+much as you can.
+
+
+8. Wirte a delcartion for a two-dimensional array named temperature_readings that stores one month of
+hourly temperature readings. (For simplicity, assume that a month has 30 days.) The rows of the array 
+should represent days of the month; the columns should represent hours of the day.
+
+9. Using the array of Exercise 8, write a program fragment that computes the average tempreature
+for a month
+
+10. Write a declaration for an 8x8 char array named chess-board. Include an initializer that puts the 
+following data into thea array
+
+11. Write a program fragment that declares an 8x8 char array named checker_board and then uses a
+loop to store the following data into the array
