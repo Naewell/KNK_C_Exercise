@@ -1,0 +1,21 @@
+﻿#include <stdio.h>
+
+int cal(int x)
+{
+	3*(x*x*x*x*x) + 2*(x*x*x*x) - 5*
+		(x*x*x) - x * x + 7 * x - 6;
+	printf("%d", x);
+}
+
+int main()
+{
+	int a;
+	scanf_s("%d", &a);
+
+	cal(a);
+
+	system("pause");
+	return 0;
+}
+
+이거 디버깅 햇는데 자꾸 x값이 입력값 그대로나오는데 뭐가 문젠지 모르겠어
